@@ -50,7 +50,7 @@ const start = () => {
     }
   });
 
-  bot.on('callback_query', msg => {
+  bot.on('callback_query', async msg => {
     const data = msg.data;
     const chatId = msg.message.chat.id;
 
@@ -59,9 +59,9 @@ const start = () => {
     }
 
     if (data === chats[chatId]) {
-      return bot.sendMessage(chatId, `Ты угадал! Цыфра ${chats[chatId]}`, againOptions);
+      return await bot.sendMessage(chatId, `Ты угадал! Цыфра ${chats[chatId]}`, againOptions);
     } else {
-      return bot.sendMessage(
+      return await bot.sendMessage(
         chatId,
         `К сожалению ты не угадал, бот загадал цыфру ${chats[chatId]}`,
         againOptions,
