@@ -4,6 +4,8 @@
 /.pnp
 .pnp.js
 
+token.js
+
 # production
 /build
 
